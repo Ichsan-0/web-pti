@@ -40,7 +40,7 @@
     <p class="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed font-light">
       Menyiapkan pendidik profesional yang <strong class="text-white font-semibold">islami</strong>,
       <strong class="text-white font-semibold">modern</strong>, dan
-      <strong class="text-white font-semibold">berdaya saing</strong> — berakar di Aceh, relevan untuk dunia.
+      <strong class="text-white font-semibold">berdaya saing global</strong> — berakar di Aceh, relevan untuk dunia.
     </p>
 
     <div class="flex flex-col sm:flex-row gap-4">
@@ -265,57 +265,65 @@
       <div class="reveal flex gap-2 bg-gray-100 p-1 rounded-2xl">
         <button data-filter="all"
           class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-primary-700 text-white transition-all duration-200">Semua</button>
-        <button data-filter="pendidikan"
-          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Pendidikan</button>
-        <button data-filter="non-pendidikan"
-          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Non-Pendidikan</button>
+        <button data-filter="Unggul"
+          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Akreditasi
+          Unggul</button>
+        <button data-filter="Baik Sekali"
+          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Akreditasi
+          Baik Sekali</button>
       </div>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="prodi-grid">
 
       <% const prodis=[ { nama: "Pendidikan Agama Islam" , akreditasi: "Unggul" ,
-        desc: "Mencetak guru PAI profesional, berakhlak mulia, dan kompeten di era digital." , kategori: "pendidikan" ,
+        desc: "Mencetak guru PAI profesional, berakhlak mulia, dan kompeten di era digital." , kategori: "Unggul" ,
         icon: "book-open" }, { nama: "Pendidikan Bahasa Arab" , akreditasi: "Unggul" ,
         desc: "Menghasilkan guru bahasa Arab yang mampu mengajar secara komunikatif dan kontekstual." ,
-        kategori: "pendidikan" , icon: "chalkboard-teacher" }, { nama: "Pendidikan Matematika" , akreditasi: "A" ,
-        desc: "Mendidik calon guru matematika yang inovatif, analitis, dan berbasis riset." , kategori: "pendidikan" ,
-        icon: "function" }, { nama: "Pendidikan Fisika" , akreditasi: "Unggul" ,
-        desc: "Membentuk guru fisika dengan kemampuan praktikum laboratorium dan penguasaan teknologi." ,
-        kategori: "pendidikan" , icon: "atom" }, { nama: "Pendidikan Kimia" , akreditasi: "A" ,
-        desc: "Menyiapkan lulusan yang kompeten dalam ilmu kimia dan metodologi pengajaran modern." ,
-        kategori: "pendidikan" , icon: "flask" }, { nama: "PGMI" , akreditasi: "Unggul" ,
-        desc: "Pendidikan Guru Madrasah Ibtidaiyah — ahli dalam mendidik anak usia dasar." , kategori: "pendidikan" ,
-        icon: "student" }, { nama: "PIAUD" , akreditasi: "A" ,
-        desc: "Pendidikan Islam Anak Usia Dini — spesialis pengembangan karakter sejak dini." , kategori: "pendidikan" ,
-        icon: "baby" }, { nama: "Bimbingan Konseling Islam" , akreditasi: "Unggul" ,
-        desc: "Menyiapkan konselor sekolah yang berempati, profesional, dan berbasis nilai Islam." ,
-        kategori: "pendidikan" , icon: "chats-circle" }, { nama: "Manajemen Pendidikan Islam" , akreditasi: "A" ,
-        desc: "Menghasilkan manajer pendidikan yang kompeten dalam tata kelola lembaga Islam." ,
-        kategori: "non-pendidikan" , icon: "buildings" }, { nama: "Pendidikan Bahasa Inggris" , akreditasi: "Unggul" ,
-        desc: "Mencetak guru bahasa Inggris yang fasih, kreatif, dan berwawasan global." , kategori: "pendidikan" ,
-        icon: "translate" }, { nama: "Tadris IPS" , akreditasi: "A" ,
-        desc: "Calon guru IPS yang mampu menganalisis fenomena sosial dan membangun karakter siswa." ,
-        kategori: "pendidikan" , icon: "globe" }, { nama: "Tadris Biologi" , akreditasi: "A" ,
+        kategori: "Unggul" , icon: "chalkboard-teacher" }, { nama: "Pendidikan Bahasa Inggris" , akreditasi: "Unggul" ,
+        desc: "Mencetak guru bahasa Inggris yang fasih, kreatif, dan berwawasan global." , kategori: "Unggul" ,
+        icon: "translate" }, { nama: "Pendidikan Matematika" , akreditasi: "Unggul" ,
+        desc: "Mendidik calon guru matematika yang inovatif, analitis, dan berbasis riset." , kategori: "Unggul" ,
+        icon: "function" }, { nama: "Manajemen Pendidikan Islam" , akreditasi: "Unggul" ,
+        desc: "Menghasilkan manajer pendidikan yang kompeten dalam tata kelola lembaga Islam." , kategori: "Unggul" ,
+        icon: "buildings" }, { nama: "Pendidikan Biologi" , akreditasi: "Unggul" ,
         desc: "Mendidik guru biologi yang terampil dalam penelitian dan pengajaran berbasis lingkungan." ,
-        kategori: "pendidikan" , icon: "leaf" }, ]; %>
+        kategori: "Unggul" , icon: "leaf" }, { nama: "Pendidikan Kimia" , akreditasi: "Unggul" ,
+        desc: "Menyiapkan lulusan yang kompeten dalam ilmu kimia dan metodologi pengajaran modern." , kategori: "Unggul"
+        , icon: "flask" }, { nama: "Pendidikan Guru Madrasah Ibtidaiyah" , akreditasi: "Unggul" ,
+        desc: "Pendidikan Guru Madrasah Ibtidaiyah — ahli dalam mendidik anak usia dasar." , kategori: "Unggul" ,
+        icon: "student" }, { nama: "Pendidikan Islam Anak Usia Dini" , akreditasi: "Unggul" ,
+        desc: "Pendidikan Islam Anak Usia Dini — spesialis pengembangan karakter sejak dini." , kategori: "Unggul" ,
+        icon: "baby" }, { nama: "Pendidikan Teknik Elektro" , akreditasi: "Unggul" ,
+        desc: "Mencetak pendidik profesional di bidang teknik elektro dengan keahlian praktis dan teoritis." ,
+        kategori: "Unggul" , icon: "lightning" }, { nama: "Pendidikan Teknologi Informasi" , akreditasi: "Unggul" ,
+        desc: "Menyiapkan pendidik bidang teknologi informasi yang adaptif dan inovatif di era digital." ,
+        kategori: "Unggul" , icon: "desktop" }, { nama: "Bimbingan Konseling" , akreditasi: "Unggul" ,
+        desc: "Menyiapkan konselor sekolah yang berempati, profesional, dan berbasis nilai Islam." , kategori: "Unggul"
+        , icon: "chats-circle" }, { nama: "Pendidikan Profesi Guru" , akreditasi: "Unggul" ,
+        desc: "Program percepatan kompetensi guru untuk menjadi pendidik profesional bersertifikat." ,
+        kategori: "Unggul" , icon: "certificate" }, { nama: "Pendidikan Fisika" , akreditasi: "Baik Sekali" ,
+        desc: "Membentuk guru fisika dengan kemampuan praktikum laboratorium dan penguasaan teknologi." ,
+        kategori: "Baik Sekali" , icon: "atom" } ]; %>
 
         <% prodis.forEach(function(p, i) { %>
           <div
             class="prodi-card card-hover reveal bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:border-primary-200 flex flex-col"
             data-category="<%= p.kategori %>" style="transition-delay: <%= (i % 4) * 0.1 %>s">
-            <div class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center mb-4">
-              <i class="ph ph-<%= p.icon %> text-xl text-primary-600"></i>
+            <div class="flex items-start gap-3 mb-3">
+              <div class="w-10 h-10 rounded-xl bg-primary-50 flex-shrink-0 flex items-center justify-center">
+                <i class="ph ph-<%= p.icon %> text-xl text-primary-600"></i>
+              </div>
+              <div class="flex flex-col items-start">
+                <h3 class="font-bold text-gray-900 text-sm leading-tight mb-1.5">
+                  <%= p.nama %>
+                </h3>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-[10px] font-bold <%= p.akreditasi === 'Unggul' ? 'bg-primary-100 text-primary-700' : 'bg-blue-100 text-blue-700' %>">
+                  Akreditasi <%= p.akreditasi %>
+                </span>
+              </div>
             </div>
-            <div class="inline-flex items-center gap-1.5 mb-3">
-              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold
-            <%= p.akreditasi === 'Unggul' ? 'bg-primary-100 text-primary-700' : 'bg-blue-100 text-blue-700' %>">
-                Akreditasi <%= p.akreditasi %>
-              </span>
-            </div>
-            <h3 class="font-bold text-gray-900 text-sm mb-2 leading-tight">
-              <%= p.nama %>
-            </h3>
             <p class="text-gray-500 text-xs leading-relaxed flex-1 mb-4">
               <%= p.desc %>
             </p>

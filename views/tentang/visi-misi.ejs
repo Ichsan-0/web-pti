@@ -1,0 +1,146 @@
+<!-- ===== PAGE HERO ===== -->
+<section
+  class="pt-32 pb-16 bg-gradient-to-br from-islamic-dark via-primary-800 to-primary-900 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10"
+    style="background-image: radial-gradient(circle at 20% 50%, #4ade80 0%, transparent 60%), radial-gradient(circle at 80% 20%, #22c55e 0%, transparent 50%);">
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="flex items-center gap-2 text-white/60 text-sm mb-6">
+      <a href="/" class="hover:text-white transition-colors">Beranda</a>
+      <i class="ph ph-caret-right text-xs"></i>
+      <span class="text-white/80">Tentang FTK</span>
+      <i class="ph ph-caret-right text-xs"></i>
+      <span class="text-white">Visi & Misi</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Visi & Misi</h1>
+    <p class="text-white/70 text-lg max-w-2xl">Arah, tujuan, dan nilai-nilai yang menjadi landasan Fakultas Tarbiyah dan
+      Keguruan dalam menjalankan tridarma perguruan tinggi.</p>
+  </div>
+</section>
+
+<!-- ===== VISI ===== -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Visi -->
+    <div class="reveal mb-16">
+      <div
+        class="bg-gradient-to-br from-islamic-dark to-primary-800 rounded-3xl p-10 sm:p-14 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/4"></div>
+        <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-black/10 translate-y-1/2 -translate-x-1/4"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-white/80 text-lg font-bold tracking-wider uppercase mb-6">Visi
+            FTK</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white leading-relaxed">
+            "Menjadi Fakultas Tarbiyah dan Keguruan yang <span class="text-primary-300">unggul</span>, <span
+              class="text-primary-300">inovatif</span>, dan <span class="text-primary-300">berdaya saing global</span>
+            berbasis nilai-nilai Islam pada tahun 2035."
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Misi -->
+    <div class="reveal mb-16">
+      <div class="text-center mb-12">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-lg font-bold tracking-wider uppercase mb-4">Misi
+          FTK</span>
+        <p class="text-gray-500 mt-2 max-w-xl mx-auto text-sm">Langkah-langkah strategis untuk mewujudkan visi Fakultas
+          Tarbiyah dan Keguruan.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <% const misi=[ { no: "01" , icon: "graduation-cap" , judul: "Pendidikan Berkualitas" ,
+          desc: "Menyelenggarakan pendidikan dan pengajaran yang berkualitas, relevan, dan berbasis kompetensi untuk menghasilkan lulusan yang profesional dan berintegritas."
+          }, { no: "02" , icon: "magnifying-glass" , judul: "Pengembangan Riset" ,
+          desc: "Mengembangkan budaya penelitian yang produktif dan inovatif untuk menghasilkan karya ilmiah bereputasi nasional dan internasional dalam bidang pendidikan Islam."
+          }, { no: "03" , icon: "users-three" , judul: "Pengabdian Masyarakat" ,
+          desc: "Melaksanakan pengabdian kepada masyarakat yang berdampak nyata dalam meningkatkan kualitas pendidikan dan kehidupan sosial masyarakat Aceh dan Indonesia."
+          }, { no: "04" , icon: "globe-hemisphere-east" , judul: "Kerja Sama Global" ,
+          desc: "Membangun dan memperluas kerja sama dengan berbagai institusi pendidikan, pemerintah, dan lembaga internasional untuk memperkuat kapasitas akademik."
+          }, { no: "05" , icon: "mosque" , judul: "Integrasi Nilai Islam" ,
+          desc: "Mengintegrasikan nilai-nilai Islam dalam seluruh aspek kegiatan akademik, penelitian, dan kehidupan kampus sebagai landasan karakter civitas akademika."
+          }, { no: "06" , icon: "trend-up" , judul: "Tata Kelola Unggul" ,
+          desc: "Mengembangkan tata kelola kelembagaan yang transparan, akuntabel, efisien, dan efektif untuk mendukung pencapaian visi dan misi fakultas."
+          }, ]; %>
+
+          <% misi.forEach(function(m, i) { %>
+            <div class="card-hover reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm flex gap-5"
+              style="transition-delay: <%= (i % 2) * 0.1 %>s">
+              <div class="flex-shrink-0">
+                <div
+                  class="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-600 to-primary-800 flex items-center justify-center shadow-lg">
+                  <i class="ph ph-<%= m.icon %> text-xl text-white"></i>
+                </div>
+              </div>
+              <div>
+                <div class="text-xs font-bold text-primary-600 mb-1">
+                  <%= m.no %>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm mb-2">
+                  <%= m.judul %>
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed">
+                  <%= m.desc %>
+                </p>
+              </div>
+            </div>
+            <% }); %>
+      </div>
+    </div>
+
+    <!-- Tujuan & Nilai -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Tujuan -->
+      <div class="reveal bg-primary-50 rounded-3xl p-8 border border-primary-100">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-primary-700 flex items-center justify-center">
+            <i class="ph ph-target text-white text-lg"></i>
+          </div>
+          <h3 class="font-bold text-gray-900 text-lg">Tujuan</h3>
+        </div>
+        <ul class="space-y-3">
+          <% const tujuan=[ "Menghasilkan lulusan yang kompeten, profesional, dan berakhlakul karimah"
+            , "Meningkatkan kualitas dan kuantitas penelitian bidang kependidikan Islam"
+            , "Meningkatkan kontribusi nyata bagi masyarakat dan bangsa"
+            , "Membangun jaringan kerjasama dengan 50+ institusi nasional dan internasional"
+            , "Memperoleh akreditasi unggul untuk seluruh program studi" , ]; %>
+            <% tujuan.forEach(function(t) { %>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <div class="w-5 h-5 rounded-full bg-primary-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <i class="ph ph-check text-white text-xs"></i>
+                </div>
+                <%= t %>
+              </li>
+              <% }); %>
+        </ul>
+      </div>
+
+      <!-- Nilai-nilai -->
+      <div class="reveal reveal-delay-1 bg-gradient-to-br from-gray-900 to-primary-900 rounded-3xl p-8 text-white">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+            <i class="ph ph-star text-white text-lg"></i>
+          </div>
+          <h3 class="font-bold text-white text-lg">Nilai-nilai Utama</h3>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <% const nilaiList=[ { icon: "heart" , label: "Integritas" }, { icon: "lightbulb" , label: "Inovasi" }, {
+            icon: "users" , label: "Kolaborasi" }, { icon: "shield-check" , label: "Amanah" }, { icon: "trophy" ,
+            label: "Keunggulan" }, { icon: "leaf" , label: "Keberlanjutan" }, ]; %>
+            <% nilaiList.forEach(function(n) { %>
+              <div class="flex items-center gap-2.5 bg-white/10 rounded-xl px-4 py-3">
+                <i class="ph ph-<%= n.icon %> text-primary-300 text-lg flex-shrink-0"></i>
+                <span class="text-sm font-medium text-white">
+                  <%= n.label %>
+                </span>
+              </div>
+              <% }); %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
