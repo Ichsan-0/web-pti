@@ -1,0 +1,173 @@
+<!-- ===== NAVBAR ===== -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between gap-6 h-18 py-3">
+
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-0 group" id="nav-logo">
+                <img src="/images/Lambang_UIN_Ar-Raniry.png" class="h-16 w-16 object-contain shrink-0" />
+
+                <div class="leading-tight flex-1 min-w-0">
+                    <div class="text-md md:text-sm font-semibold text-white tracking-wide truncate">
+                        Fakultas Tarbiyah dan Keguruan
+                    </div>
+                    <div class="text-xs text-white/80 truncate">
+                        UIN Ar-Raniry Banda Aceh
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-medium" id="desktop-nav">
+                <a href="#beranda"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Beranda</a>
+
+                <!-- Dropdown: Tentang -->
+                <div class="dropdown relative">
+                    <button
+                        class="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">
+                        Tentang FTK <i class="ph ph-caret-down text-xs mt-0.5"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 z-50">
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Sejarah
+                            & Profil</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Visi
+                            & Misi</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Struktur
+                            Organisasi</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Pimpinan
+                            Fakultas</a>
+                    </div>
+                </div>
+
+                <a href="#prodi"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Program
+                    Studi</a>
+
+                <!-- Dropdown: Akademik -->
+                <div class="dropdown relative">
+                    <button
+                        class="nav-link flex items-center gap-1 px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">
+                        Akademik <i class="ph ph-caret-down text-xs mt-0.5"></i>
+                    </button>
+                    <div
+                        class="dropdown-menu absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-2xl border border-gray-100 py-2 z-50">
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Kalender
+                            Akademik</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Beasiswa</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">Magang
+                            / PLP</a>
+                        <a href="#"
+                            class="block px-4 py-2.5 text-gray-700 hover:bg-primary-50 hover:text-primary-700 transition-colors text-sm rounded-lg mx-1">UKM
+                            & Organisasi</a>
+                    </div>
+                </div>
+
+                <a href="#riset"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Riset</a>
+                <a href="#kerjasama"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Kerja
+                    Sama</a>
+                <a href="#berita"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Berita</a>
+                <a href="#layanan"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Layanan</a>
+                <a href="#kontak"
+                    class="nav-link px-3 py-2 rounded-lg text-white/90 hover:text-white hover:bg-white/10 transition-all duration-200">Kontak</a>
+            </nav>
+
+            <!-- CTA -->
+            <div class="hidden lg:flex items-center gap-3">
+                <a href="#pendaftaran" id="btn-pendaftaran"
+                    class="px-5 py-2.5 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-primary-500/30 hover:from-primary-700 hover:to-primary-800 transition-all duration-300 flex items-center gap-2">
+                    <i class="ph ph-pencil-simple-line"></i>
+                    Pendaftaran
+                </a>
+            </div>
+
+            <!-- Mobile Menu Btn -->
+            <button id="mobile-menu-btn"
+                class="lg:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 shadow-xl">
+        <div class="px-4 py-4 space-y-1">
+            <a href="#beranda"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Beranda</a>
+            <a href="#"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Tentang
+                FTK</a>
+            <a href="#prodi"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Program
+                Studi</a>
+            <a href="#akademik"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Akademik
+                & Kemahasiswaan</a>
+            <a href="#riset"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Riset
+                & Publikasi</a>
+            <a href="#berita"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Berita
+                & Agenda</a>
+            <a href="#kontak"
+                class="block px-4 py-3 rounded-xl text-gray-700 hover:bg-primary-50 hover:text-primary-700 font-medium transition-colors">Kontak</a>
+            <a href="#pendaftaran"
+                class="block mt-2 px-4 py-3 rounded-xl bg-primary-700 text-white font-semibold text-center hover:bg-primary-800 transition-colors">
+                <i class="ph ph-pencil-simple-line mr-2"></i>Pendaftaran
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- Navbar color switcher (scrolled) -->
+<script>
+    const navbarEl = document.getElementById('navbar');
+    const navLinks = navbarEl.querySelectorAll('.nav-link');
+    const logo = document.getElementById('nav-logo');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 80) {
+            navbarEl.style.background = 'rgba(255,255,255,0.95)';
+
+            navLinks.forEach(l => {
+                l.classList.remove('text-white/90', 'hover:text-white', 'hover:bg-white/10');
+                l.classList.add('text-gray-700', 'hover:text-primary-700', 'hover:bg-primary-50');
+            });
+
+            logo.querySelectorAll('div').forEach(el => {
+                el.classList.remove('text-white', 'text-white/80');
+                el.classList.add('text-primary-700');
+            });
+
+        } else {
+            navbarEl.style.background = 'transparent';
+
+            navLinks.forEach(l => {
+                l.classList.add('text-white/90', 'hover:text-white', 'hover:bg-white/10');
+                l.classList.remove('text-gray-700', 'hover:text-primary-700', 'hover:bg-primary-50');
+            });
+
+            // 🔥 TAMBAHAN INI (fix kamu)
+            logo.querySelectorAll('div').forEach(el => {
+                el.classList.remove('text-primary-700');
+            });
+
+            // set ulang warna awal
+            const texts = logo.querySelectorAll('div');
+            if (texts[0]) texts[0].classList.add('text-white');
+            if (texts[1]) texts[1].classList.add('text-white/80');
+        }
+    });
+</script>

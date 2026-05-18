@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="<%= description %>" />
+  <title><%= title %></title>
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50:  '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+            },
+            islamic: {
+              green:  '#1a6b3c',
+              dark:   '#0f3d21',
+              gold:   '#c9a84c',
+              light:  '#e8f5ee',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'Poppins', 'sans-serif'],
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.6s ease-out forwards',
+            'fade-in': 'fadeIn 0.5s ease-out forwards',
+            'counter': 'counter 2s ease-out forwards',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%':   { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%':   { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js"></script>
+
+  <style>
+    * { font-family: 'Inter', 'Poppins', sans-serif; }
+
+    /* Navbar scroll effect */
+    .navbar-scrolled {
+      background: rgba(255,255,255,0.92) !important;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+    }
+
+    /* Hero slider */
+    .hero-slide { opacity: 0; transition: opacity 1.2s ease-in-out; position: absolute; inset: 0; }
+    .hero-slide.active { opacity: 1; }
+
+    /* Scroll animations */
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Dropdown */
+    .dropdown-menu { display: none; }
+    .dropdown:hover .dropdown-menu { display: block; }
+
+    /* Gradient text */
+    .gradient-text {
+      background: linear-gradient(135deg, #166534, #4ade80);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Partner logo */
+    .partner-track { display: flex; animation: scroll 30s linear infinite; width: max-content; }
+    .partner-track:hover { animation-play-state: paused; }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    /* Card hover */
+    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .card-hover:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(22, 101, 52, 0.15); }
+
+    /* Prodi filter */
+    .prodi-card { transition: all 0.3s ease; }
+    .prodi-card.hidden-card { display: none; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #166534; border-radius: 10px; }
+  </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+  <%- include('../partials/navbar') %>
+
+  <%- body %>
+
+  <%- include('../partials/footer') %>
+
+  <!-- Scripts -->
+  <script>
+    // ===== Navbar Scroll Effect =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+      } else {
+        navbar.classList.remove('navbar-scrolled');
+      }
+    });
+
+    // ===== Hero Slider =====
+    const slides = document.querySelectorAll('.hero-slide');
+    let currentSlide = 0;
+    function nextSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    if (slides.length > 0) {
+      slides[0].classList.add('active');
+      setInterval(nextSlide, 5000);
+    }
+
+    // ===== Scroll Reveal =====
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ===== Counter Animation =====
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.target);
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current).toLocaleString('id-ID') + (el.dataset.suffix || '');
+      }, 16);
+    }
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.counted) {
+          entry.target.dataset.counted = true;
+          animateCounter(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+    // ===== Mobile Menu =====
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // ===== Prodi Filter =====
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const prodiCards = document.querySelectorAll('.prodi-card');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active-filter', 'bg-primary-700', 'text-white'));
+        filterBtns.forEach(b => b.classList.add('bg-white', 'text-gray-600'));
+        btn.classList.add('active-filter', 'bg-primary-700', 'text-white');
+        btn.classList.remove('bg-white', 'text-gray-600');
+        const filter = btn.dataset.filter;
+        prodiCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // ===== Lazy Loading Images =====
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    const imgObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          imgObserver.unobserve(img);
+        }
+      });
+    });
+    lazyImages.forEach(img => imgObserver.observe(img));
+  </script>
+</body>
+</html>

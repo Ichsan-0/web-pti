@@ -1,0 +1,715 @@
+<!-- ===================================================
+     SECTION 1: HERO SLIDER
+     =================================================== -->
+<section id="beranda" class="relative h-screen min-h-[640px] overflow-hidden">
+
+  <!-- Slides -->
+  <div class="hero-slide" style="background: linear-gradient(135deg, #0f3d21 0%, #1a6b3c 50%, #166534 100%);">
+    <img src="/images/hero-bg.jpg" alt="Kampus FTK" loading="lazy"
+      class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-50" />
+  </div>
+  <div class="hero-slide" style="background: linear-gradient(135deg, #14532d 0%, #15803d 60%, #1a6b3c 100%);">
+    <div class="absolute inset-0 bg-[url('/images/news-2.jpg')] bg-cover bg-center opacity-25"></div>
+  </div>
+  <div class="hero-slide" style="background: linear-gradient(135deg, #0f3d21 0%, #1a6b3c 100%);">
+    <div class="absolute inset-0 bg-[url('/images/news-3.jpg')] bg-cover bg-center opacity-25"></div>
+  </div>
+
+  <!-- Overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60 z-10"></div>
+
+  <!-- Geometric decorations -->
+  <div class="absolute top-20 right-10 w-72 h-72 rounded-full bg-primary-500/10 blur-3xl z-10"></div>
+  <div class="absolute bottom-20 left-10 w-96 h-96 rounded-full bg-islamic-gold/10 blur-3xl z-10"></div>
+
+  <!-- Content -->
+  <div class="relative z-20 h-full flex flex-col items-center justify-center text-center px-4 sm:px-6">
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-xs font-semibold tracking-widest uppercase mb-6
+      animate-fade-in">
+      <span class="w-1.5 h-1.5 rounded-full bg-primary-400 animate-pulse"></span>
+      UIN Ar-Raniry Banda Aceh
+    </div>
+
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-5 max-w-4xl"
+      style="text-shadow: 0 4px 20px rgba(0,0,0,0.3)">
+      Fakultas Tarbiyah
+      <span class="block text-primary-300">dan Keguruan</span>
+    </h1>
+
+    <p class="text-base sm:text-lg lg:text-xl text-white/80 max-w-2xl mb-10 leading-relaxed font-light">
+      Menyiapkan pendidik profesional yang <strong class="text-white font-semibold">islami</strong>,
+      <strong class="text-white font-semibold">modern</strong>, dan
+      <strong class="text-white font-semibold">berdaya saing</strong> — berakar di Aceh, relevan untuk dunia.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="#prodi" id="hero-cta-prodi"
+        class="px-8 py-3.5 bg-white text-primary-800 font-bold rounded-2xl shadow-2xl hover:bg-primary-50 hover:scale-105 transition-all duration-300 flex items-center gap-2 justify-center text-sm">
+        <i class="ph ph-books text-lg"></i>
+        Lihat Program Studi
+      </a>
+      <a href="#pendaftaran" id="hero-cta-daftar"
+        class="px-8 py-3.5 bg-gradient-to-r from-primary-500 to-primary-700 text-white font-bold rounded-2xl shadow-2xl hover:shadow-primary-500/40 hover:scale-105 transition-all duration-300 flex items-center gap-2 justify-center text-sm border border-primary-400/50">
+        <i class="ph ph-pencil-simple-line text-lg"></i>
+        Pendaftaran
+      </a>
+    </div>
+  </div>
+
+  <!-- Slide dots -->
+  <div class="absolute bottom-6 right-8 z-20 flex gap-2" id="slide-dots">
+    <button onclick="goToSlide(0)" class="dot w-2 h-2 rounded-full bg-white/80 transition-all"></button>
+    <button onclick="goToSlide(1)" class="dot w-2 h-2 rounded-full bg-white/30 transition-all"></button>
+    <button onclick="goToSlide(2)" class="dot w-2 h-2 rounded-full bg-white/30 transition-all"></button>
+  </div>
+</section>
+
+<!-- ===================================================
+     STATISTIK STRIP (NEW DESIGN)
+     =================================================== -->
+<section class="py-12 relative z-30 -mt-16 sm:-mt-24">
+  <div class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="bg-gradient-to-br from-primary-600 to-islamic-dark rounded-[2rem] shadow-2xl relative overflow-hidden border border-primary-400/20">
+      <!-- Peta Dunia Background -->
+      <div class="absolute inset-0 opacity-10 pointer-events-none"
+        style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg'); background-size: 120%; background-position: center; filter: invert(1);">
+      </div>
+
+      <!-- Glowing effect -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-400/20 rounded-full blur-[100px] pointer-events-none">
+      </div>
+
+      <div class="relative z-10 py-12 px-6 sm:px-12 lg:px-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center">
+
+          <!-- Kolom 1: Mahasiswa Aktif & Prodi -->
+          <div class="text-center space-y-10 reveal">
+            <div>
+              <div class="text-5xl lg:text-6xl font-black text-[#ffda29] mb-3 drop-shadow-sm tracking-tight">
+                <span class="counter" data-target="5400">0</span>+
+              </div>
+              <div class="text-lg lg:text-xl font-medium text-white mb-2">Mahasiswa Aktif</div>
+              <div class="text-sm text-primary-100/90 font-light">Berdasarkan Data Akademik</div>
+              <div class="text-sm text-primary-100/90 font-light">Keadaan Semester Ganjil 2025</div>
+            </div>
+
+            <div>
+              <div class="text-4xl lg:text-5xl font-black text-white mb-2 tracking-tight">
+                <span class="counter" data-target="13">0</span>+
+              </div>
+              <div class="text-base font-medium text-white">Program Studi Unggul</div>
+            </div>
+          </div>
+
+          <!-- Kolom 2: Mahasiswa Berprestasi -->
+          <div class="text-center space-y-8 reveal reveal-delay-1 flex flex-col items-center">
+            <a href="#"
+              class="inline-flex items-center gap-2 text-white text-lg font-semibold hover:text-[#ffda29] transition-colors group">
+              Mahasiswa Berprestasi
+              <i class="ph ph-caret-right text-sm group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+            <div class="flex flex-col gap-6 text-left max-w-[320px] w-full">
+              <!-- Prestasi 1 -->
+              <div class="flex items-center gap-4 group cursor-pointer">
+                <div
+                  class="w-[72px] h-[72px] rounded-full overflow-hidden border-4 border-primary-400/30 group-hover:border-[#ffda29] transition-all flex-shrink-0 shadow-lg relative">
+                  <img src="/images/news-3.jpg" alt="Prestasi"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="flex-1">
+                  <p
+                    class="text-sm text-white font-medium leading-snug group-hover:text-[#ffda29] transition-colors drop-shadow-md">
+                    Juara 1 Kompetisi Guru Inovatif Tingkat Nasional 2025</p>
+                </div>
+              </div>
+
+              <!-- Prestasi 2 -->
+              <div class="flex items-center gap-4 group cursor-pointer">
+                <div
+                  class="w-[72px] h-[72px] rounded-full overflow-hidden border-4 border-primary-400/30 group-hover:border-[#ffda29] transition-all flex-shrink-0 shadow-lg relative">
+                  <img src="/images/news-2.jpg" alt="Prestasi"
+                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div class="flex-1">
+                  <p
+                    class="text-sm text-white font-medium leading-snug group-hover:text-[#ffda29] transition-colors drop-shadow-md">
+                    Peraih Beasiswa LPDP Luar Negeri Angkatan 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom 3: Alumni & Stat Lain -->
+          <div class="text-center space-y-10 reveal reveal-delay-2">
+            <div>
+              <div class="text-5xl lg:text-6xl font-black text-white mb-3 drop-shadow-sm tracking-tight">
+                <span class="counter" data-target="25000">0</span>+
+              </div>
+              <div class="text-lg lg:text-xl font-medium text-white mb-2">Alumni</div>
+              <div class="text-sm text-primary-100/90 font-light">Berdasarkan Data Tracer Study</div>
+            </div>
+
+            <div class="flex justify-center gap-10">
+              <div>
+                <div class="text-4xl lg:text-5xl font-black text-white mb-2 tracking-tight">
+                  <span class="counter" data-target="16">0</span>
+                </div>
+                <div class="text-base font-medium text-white">Guru Besar</div>
+              </div>
+              <div>
+                <div class="text-4xl lg:text-5xl font-black text-white mb-2 tracking-tight">
+                  <span class="counter" data-target="40">0</span>+
+                </div>
+                <div class="text-base font-medium text-white">Tahun Berdiri</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 2: KEUNGGULAN FTK
+     =================================================== -->
+<section id="keunggulan" class="py-4 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <span
+        class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-4">Mengapa
+        FTK?</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Keunggulan Kami</h2>
+      <p class="text-gray-500 max-w-xl mx-auto text-base leading-relaxed">Kami hadir sebagai pusat pendidikan guru
+        yang berintegritas, inovatif, dan berdampak bagi masyarakat luas.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Card 1 -->
+      <div class="card-hover reveal bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center group">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center mx-auto mb-5 group-hover:from-primary-600 group-hover:to-primary-700 transition-all duration-300">
+          <i
+            class="ph ph-graduation-cap text-2xl text-primary-700 group-hover:text-white transition-colors duration-300"></i>
+        </div>
+        <div class="text-4xl font-bold text-gray-900 mb-1">13+</div>
+        <h3 class="font-bold text-gray-800 mb-2 text-sm leading-tight">Program Studi Akreditasi Unggul</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Seluruh prodi terkareditasi dengan nilai Unggul dan A
+          oleh BAN-PT dan LAM-PTKes.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="card-hover reveal reveal-delay-1 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center group">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center mx-auto mb-5 group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-300">
+          <i class="ph ph-users-three text-2xl text-blue-700 group-hover:text-white transition-colors duration-300"></i>
+        </div>
+        <div class="text-4xl font-bold text-gray-900 mb-1">16</div>
+        <h3 class="font-bold text-gray-800 mb-2 text-sm leading-tight">Guru Besar Aktif</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Didukung oleh 16 profesor berpengalaman dan ratusan
+          dosen berkualifikasi S3.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="card-hover reveal reveal-delay-2 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center group">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-amber-200 flex items-center justify-center mx-auto mb-5 group-hover:from-amber-500 group-hover:to-amber-600 transition-all duration-300">
+          <i class="ph ph-mosque text-2xl text-amber-700 group-hover:text-white transition-colors duration-300"></i>
+        </div>
+        <div class="text-4xl font-bold text-gray-900 mb-1">100%</div>
+        <h3 class="font-bold text-gray-800 mb-2 text-sm leading-tight">Kampus Islami & Modern</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Lingkungan akademik yang memadukan nilai-nilai Islam
+          dengan fasilitas kampus modern.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div
+        class="card-hover reveal reveal-delay-3 bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center group">
+        <div
+          class="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center mx-auto mb-5 group-hover:from-purple-600 group-hover:to-purple-700 transition-all duration-300">
+          <i
+            class="ph ph-globe-hemisphere-east text-2xl text-purple-700 group-hover:text-white transition-colors duration-300"></i>
+        </div>
+        <div class="text-4xl font-bold text-gray-900 mb-1">50+</div>
+        <h3 class="font-bold text-gray-800 mb-2 text-sm leading-tight">Jaringan Kerja Sama Global</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Bermitra dengan universitas dan lembaga internasional
+          di lebih dari 15 negara.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 3: PROGRAM STUDI
+     =================================================== -->
+<section id="prodi" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-6">
+      <div class="reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-3">Akademik</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Program Studi</h2>
+        <p class="text-gray-500 mt-2 text-sm max-w-md">Pilih jalur pendidikan terbaik sesuai minat dan
+          potensimu.</p>
+      </div>
+
+      <!-- Filter -->
+      <div class="reveal flex gap-2 bg-gray-100 p-1 rounded-2xl">
+        <button data-filter="all"
+          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-primary-700 text-white transition-all duration-200">Semua</button>
+        <button data-filter="pendidikan"
+          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Pendidikan</button>
+        <button data-filter="non-pendidikan"
+          class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-white text-gray-600 hover:bg-gray-50 transition-all duration-200">Non-Pendidikan</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5" id="prodi-grid">
+
+      <% const prodis=[ { nama: "Pendidikan Agama Islam" , akreditasi: "Unggul" ,
+        desc: "Mencetak guru PAI profesional, berakhlak mulia, dan kompeten di era digital." , kategori: "pendidikan" ,
+        icon: "book-open" }, { nama: "Pendidikan Bahasa Arab" , akreditasi: "Unggul" ,
+        desc: "Menghasilkan guru bahasa Arab yang mampu mengajar secara komunikatif dan kontekstual." ,
+        kategori: "pendidikan" , icon: "chalkboard-teacher" }, { nama: "Pendidikan Matematika" , akreditasi: "A" ,
+        desc: "Mendidik calon guru matematika yang inovatif, analitis, dan berbasis riset." , kategori: "pendidikan" ,
+        icon: "function" }, { nama: "Pendidikan Fisika" , akreditasi: "Unggul" ,
+        desc: "Membentuk guru fisika dengan kemampuan praktikum laboratorium dan penguasaan teknologi." ,
+        kategori: "pendidikan" , icon: "atom" }, { nama: "Pendidikan Kimia" , akreditasi: "A" ,
+        desc: "Menyiapkan lulusan yang kompeten dalam ilmu kimia dan metodologi pengajaran modern." ,
+        kategori: "pendidikan" , icon: "flask" }, { nama: "PGMI" , akreditasi: "Unggul" ,
+        desc: "Pendidikan Guru Madrasah Ibtidaiyah — ahli dalam mendidik anak usia dasar." , kategori: "pendidikan" ,
+        icon: "student" }, { nama: "PIAUD" , akreditasi: "A" ,
+        desc: "Pendidikan Islam Anak Usia Dini — spesialis pengembangan karakter sejak dini." , kategori: "pendidikan" ,
+        icon: "baby" }, { nama: "Bimbingan Konseling Islam" , akreditasi: "Unggul" ,
+        desc: "Menyiapkan konselor sekolah yang berempati, profesional, dan berbasis nilai Islam." ,
+        kategori: "pendidikan" , icon: "chats-circle" }, { nama: "Manajemen Pendidikan Islam" , akreditasi: "A" ,
+        desc: "Menghasilkan manajer pendidikan yang kompeten dalam tata kelola lembaga Islam." ,
+        kategori: "non-pendidikan" , icon: "buildings" }, { nama: "Pendidikan Bahasa Inggris" , akreditasi: "Unggul" ,
+        desc: "Mencetak guru bahasa Inggris yang fasih, kreatif, dan berwawasan global." , kategori: "pendidikan" ,
+        icon: "translate" }, { nama: "Tadris IPS" , akreditasi: "A" ,
+        desc: "Calon guru IPS yang mampu menganalisis fenomena sosial dan membangun karakter siswa." ,
+        kategori: "pendidikan" , icon: "globe" }, { nama: "Tadris Biologi" , akreditasi: "A" ,
+        desc: "Mendidik guru biologi yang terampil dalam penelitian dan pengajaran berbasis lingkungan." ,
+        kategori: "pendidikan" , icon: "leaf" }, ]; %>
+
+        <% prodis.forEach(function(p, i) { %>
+          <div
+            class="prodi-card card-hover reveal bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:border-primary-200 flex flex-col"
+            data-category="<%= p.kategori %>" style="transition-delay: <%= (i % 4) * 0.1 %>s">
+            <div class="w-10 h-10 rounded-xl bg-primary-50 flex items-center justify-center mb-4">
+              <i class="ph ph-<%= p.icon %> text-xl text-primary-600"></i>
+            </div>
+            <div class="inline-flex items-center gap-1.5 mb-3">
+              <span class="px-2.5 py-0.5 rounded-full text-xs font-bold
+            <%= p.akreditasi === 'Unggul' ? 'bg-primary-100 text-primary-700' : 'bg-blue-100 text-blue-700' %>">
+                Akreditasi <%= p.akreditasi %>
+              </span>
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm mb-2 leading-tight">
+              <%= p.nama %>
+            </h3>
+            <p class="text-gray-500 text-xs leading-relaxed flex-1 mb-4">
+              <%= p.desc %>
+            </p>
+            <a href="#"
+              class="text-primary-700 text-xs font-semibold hover:text-primary-900 flex items-center gap-1.5 group">
+              Lihat Detail
+              <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+          <% }); %>
+
+    </div>
+
+    <div class="text-center mt-10 reveal">
+      <a href="#"
+        class="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary-700 text-primary-700 font-semibold rounded-xl hover:bg-primary-700 hover:text-white transition-all duration-300 text-sm">
+        <i class="ph ph-list-bullets"></i>
+        Lihat Semua Program Studi
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 4: AKADEMIK & KEMAHASISWAAN
+     =================================================== -->
+<section id="akademik" class="py-24 bg-gradient-to-br from-islamic-light via-white to-primary-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 reveal">
+      <span
+        class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-4">Kehidupan
+        Kampus</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Akademik & Kemahasiswaan</h2>
+      <p class="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">Kami mendukung perjalanan akademik dan
+        pengembangan diri mahasiswa secara menyeluruh.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <% const akademiks=[ { icon: "calendar" , title: "Kalender Akademik" ,
+        desc: "Jadwal lengkap perkuliahan, UTS, UAS, wisuda, dan kegiatan akademik sepanjang tahun." , color: "primary"
+        , link: "#" }, { icon: "medal" , title: "Beasiswa" ,
+        desc: "Program beasiswa dari pemerintah, lembaga swasta, dan jalur prestasi akademik mahasiswa." ,
+        color: "amber" , link: "#" }, { icon: "chalkboard-teacher" , title: "Magang / PLP" ,
+        desc: "Program Latihan Profesi dan magang di sekolah-sekolah mitra di seluruh Aceh dan nasional." ,
+        color: "blue" , link: "#" }, { icon: "users-four" , title: "UKM & Organisasi" ,
+        desc: "Bergabunglah dengan 20+ Unit Kegiatan Mahasiswa aktif dan organisasi kemahasiswaan." , color: "purple" ,
+        link: "#" }, ]; %>
+
+        <% akademiks.forEach(function(a, i) { %>
+          <div class="card-hover reveal bg-white rounded-2xl p-6 shadow-sm border border-gray-100"
+            style="transition-delay: <%= i * 0.1 %>s">
+            <div
+              class="w-12 h-12 rounded-xl flex items-center justify-center mb-5
+          <%= a.color === 'primary' ? 'bg-primary-100' : a.color === 'amber' ? 'bg-amber-100' : a.color === 'blue' ? 'bg-blue-100' : 'bg-purple-100' %>">
+              <i
+                class="ph ph-<%= a.icon %> text-2xl
+            <%= a.color === 'primary' ? 'text-primary-700' : a.color === 'amber' ? 'text-amber-600' : a.color === 'blue' ? 'text-blue-600' : 'text-purple-600' %>"></i>
+            </div>
+            <h3 class="font-bold text-gray-900 mb-2 text-sm">
+              <%= a.title %>
+            </h3>
+            <p class="text-gray-500 text-xs leading-relaxed mb-4">
+              <%= a.desc %>
+            </p>
+            <a href="<%= a.link %>"
+              class="text-primary-700 text-xs font-semibold hover:text-primary-900 flex items-center gap-1.5 group">
+              Selengkapnya <i class="ph ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+            </a>
+          </div>
+          <% }); %>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 5: BERITA & AGENDA
+     =================================================== -->
+<section id="berita" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-start justify-between mb-12 gap-4">
+      <div class="reveal">
+        <span
+          class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-3">Terkini</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">Berita & Agenda</h2>
+      </div>
+      <a href="#"
+        class="reveal text-sm font-semibold text-primary-700 hover:text-primary-900 flex items-center gap-2 mt-2">
+        Lihat Semua Berita <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Berita (2/3) -->
+      <div class="lg:col-span-2 space-y-6">
+        <% const berita=[ { img: "/images/news-1.jpg" , kategori: "Akademik" ,
+          judul: "FTK Raih Akreditasi Unggul untuk 8 Program Studi Secara Serentak" , tanggal: "12 Mei 2025" ,
+          desc: "Sebanyak 8 program studi di lingkungan Fakultas Tarbiyah dan Keguruan UIN Ar-Raniry berhasil meraih akreditasi Unggul dari BAN-PT dalam penilaian terbaru."
+          }, { img: "/images/news-2.jpg" , kategori: "Seminar" ,
+          judul: "Seminar Internasional Pendidikan Islam: Inovasi Kurikulum Era 5.0" , tanggal: "5 Mei 2025" ,
+          desc: "FTK menggelar seminar internasional yang dihadiri lebih dari 200 peserta dari dalam dan luar negeri, membahas transformasi pendidikan Islam di era teknologi."
+          }, { img: "/images/news-3.jpg" , kategori: "Kemahasiswaan" ,
+          judul: "Mahasiswa FTK Juara 1 Kompetisi Guru Inovatif Tingkat Nasional" , tanggal: "28 April 2025" ,
+          desc: "Tim mahasiswa prodi Pendidikan Agama Islam berhasil meraih juara pertama dalam kompetisi nasional inovasi pembelajaran yang digelar di Jakarta."
+          }, ]; %>
+
+          <% berita.forEach(function(b, i) { %>
+            <div
+              class="card-hover reveal flex gap-5 bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm p-4 hover:border-primary-100"
+              style="transition-delay: <%= i * 0.1 %>s">
+              <div class="flex-shrink-0 w-28 h-24 sm:w-36 sm:h-28 rounded-xl overflow-hidden">
+                <img src="<%= b.img %>" alt="<%= b.judul %>" loading="lazy"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              </div>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="px-2 py-0.5 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold">
+                    <%= b.kategori %>
+                  </span>
+                  <span class="text-gray-400 text-xs flex items-center gap-1"><i class="ph ph-calendar-blank"></i>
+                    <%= b.tanggal %>
+                  </span>
+                </div>
+                <h3 class="font-bold text-gray-900 text-sm leading-snug mb-1.5 line-clamp-2">
+                  <%= b.judul %>
+                </h3>
+                <p class="text-gray-500 text-xs leading-relaxed line-clamp-2 hidden sm:block">
+                  <%= b.desc %>
+                </p>
+                <a href="#"
+                  class="text-primary-700 text-xs font-semibold mt-2 inline-flex items-center gap-1 hover:gap-2 transition-all">
+                  Baca Selengkapnya <i class="ph ph-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+            <% }); %>
+      </div>
+
+      <!-- Agenda (1/3) -->
+      <div class="reveal reveal-delay-2">
+        <div class="bg-gradient-to-br from-islamic-dark to-primary-800 rounded-2xl p-6 text-white h-full">
+          <div class="flex items-center gap-2 mb-6">
+            <i class="ph ph-calendar-check text-primary-300 text-xl"></i>
+            <h3 class="font-bold text-white text-base">Agenda Kegiatan</h3>
+          </div>
+
+          <% const agendas=[ { tanggal: "14 Mei" , bulan: "2025" , kegiatan: "Wisuda Sarjana & Pascasarjana Gelombang I"
+            , lokasi: "Aula Serba Guna UIN" }, { tanggal: "20 Mei" , bulan: "2025" ,
+            kegiatan: "Workshop Penulisan Artikel Jurnal Internasional" , lokasi: "Gedung FTK Lt. 3" }, {
+            tanggal: "26 Mei" , bulan: "2025" , kegiatan: "Seminar Nasional Pendidikan Karakter 2025" ,
+            lokasi: "Aula FTK" }, { tanggal: "3 Jun" , bulan: "2025" , kegiatan: "Ujian Akhir Semester Genap 2024/2025"
+            , lokasi: "Seluruh Ruang Kelas" }, { tanggal: "15 Jun" , bulan: "2025" ,
+            kegiatan: "Pendaftaran Mahasiswa Baru Jalur Mandiri" , lokasi: "Online – PMB UIN" }, ]; %>
+
+            <div class="space-y-4">
+              <% agendas.forEach(function(a) { %>
+                <div class="flex gap-3 group cursor-pointer">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/10 group-hover:bg-primary-600 transition-colors flex flex-col items-center justify-center">
+                    <span class="text-base font-bold leading-none text-white">
+                      <%= a.tanggal.split(' ')[0] %></span>
+                <span class="text-xs text-white/60"><%= a.tanggal.split(' ')[1] %></span>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-semibold text-white leading-snug line-clamp-2 group-hover:text-primary-300 transition-colors"><%= a.kegiatan %></p>
+                <p class="text-xs text-white/50 mt-0.5 flex items-center gap-1">
+                  <i class="ph ph-map-pin text-xs"></i><%= a.lokasi %>
+                </p>
+              </div>
+            </div>
+            <% if (agendas.indexOf(a) < agendas.length - 1) { %>
+            <div class="border-t border-white/10"></div>
+            <% } %>
+            <% }); %>
+          </div>
+
+          <a href="#" class="mt-6 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-sm font-semibold transition-colors">
+            Lihat Semua Agenda <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 6: RISET & KERJA SAMA
+     =================================================== -->
+<section id="riset" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Kiri: Riset -->
+      <div class="reveal">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-4">Inovasi & Ilmu Pengetahuan</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-5">Riset & Publikasi</h2>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8">
+          FTK aktif menghasilkan penelitian berkualitas yang dipublikasikan di jurnal nasional dan internasional bereputasi. Kami mendorong budaya riset dari mahasiswa hingga profesor.
+        </p>
+        <div class="grid grid-cols-2 gap-4 mb-8">
+          <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-primary-700 counter" data-target="350" data-suffix="+">0</div>
+            <div class="text-xs text-gray-500 mt-1">Artikel Jurnal Terindeks</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-primary-700 counter" data-target="12" data-suffix="">0</div>
+            <div class="text-xs text-gray-500 mt-1">Jurnal Terakreditasi Sinta</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-primary-700 counter" data-target="85" data-suffix="+">0</div>
+            <div class="text-xs text-gray-500 mt-1">Penelitian Aktif 2025</div>
+          </div>
+          <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm">
+            <div class="text-2xl font-bold text-primary-700 counter" data-target="28" data-suffix="">0</div>
+            <div class="text-xs text-gray-500 mt-1">HKI & Paten Terdaftar</div>
+          </div>
+        </div>
+        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white font-semibold rounded-xl hover:bg-primary-800 transition-colors text-sm shadow-lg hover:shadow-primary-500/30">
+          <i class="ph ph-article"></i>
+          Lihat Publikasi
+        </a>
+      </div>
+
+      <!-- Kanan: Kerja Sama + Mitra -->
+      <div id="kerjasama" class="reveal reveal-delay-2">
+        <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-4">Jaringan Global</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-5">Kerja Sama</h2>
+        <p class="text-gray-500 text-sm leading-relaxed mb-8">
+          Bermitra dengan universitas, lembaga pemerintah, dan organisasi internasional untuk memperluas wawasan dan peluang bagi mahasiswa dan dosen FTK.
+        </p>
+
+        <!-- Partner Logos Slider -->
+        <div class="overflow-hidden rounded-2xl bg-white border border-gray-100 shadow-sm p-6 mb-6">
+          <p class="text-xs text-gray-400 text-center mb-5 font-medium uppercase tracking-wider">Mitra Institusi</p>
+          <div class="overflow-hidden">
+            <div class="partner-track">
+              <% const partners = [
+                { name: "UGM", full: "Universitas Gadjah Mada" },
+                { name: "UI", full: "Universitas Indonesia" },
+                { name: "ITB", full: "Institut Teknologi Bandung" },
+                { name: "IIUM", full: "International Islamic Univ. Malaysia" },
+                { name: "USM", full: "Universiti Sains Malaysia" },
+                { name: "Al-Azhar", full: "Al-Azhar University Cairo" },
+                { name: "UGM", full: "Universitas Gadjah Mada" },
+                { name: "UI", full: "Universitas Indonesia" },
+                { name: "ITB", full: "Institut Teknologi Bandung" },
+                { name: "IIUM", full: "International Islamic Univ. Malaysia" },
+                { name: "USM", full: "Universiti Sains Malaysia" },
+                { name: "Al-Azhar", full: "Al-Azhar University Cairo" },
+              ]; %>
+              <% partners.forEach(function(p) { %>
+              <div class="flex-shrink-0 mx-4 flex flex-col items-center gap-1.5">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center shadow-sm">
+                  <span class="text-xs font-bold text-gray-600 text-center leading-tight px-1"><%= p.name %></span>
+                </div>
+                <span class="text-xs text-gray-400 text-center w-20 leading-tight"><%= p.full %></span>
+              </div>
+              <% }); %>
+            </div>
+          </div>
+        </div>
+
+        <a href="#" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary-700 text-primary-700 font-semibold rounded-xl hover:bg-primary-700 hover:text-white transition-all duration-300 text-sm">
+          <i class="ph ph-handshake"></i>
+          Lihat Kerja Sama
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 7: LAYANAN / CTA
+     =================================================== -->
+<section id="layanan" class="py-20 bg-gradient-to-br from-islamic-dark via-primary-800 to-primary-900 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10"
+    style="background-image: radial-gradient(circle at 20% 50%, #4ade80 0%, transparent 60%), radial-gradient(circle at 80% 20%, #22c55e 0%, transparent 50%);">
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Layanan Akademik</h2>
+      <p class="text-white/70 text-sm max-w-lg mx-auto">Akses layanan dan portal digital yang memudahkan perjalanan akademikmu.</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <% const layanans = [
+        { icon: "desktop", title: "Portal Mahasiswa", color: "bg-white/10" },
+        { icon: "books", title: "Perpustakaan Digital", color: "bg-white/10" },
+        { icon: "monitor-play", title: "E-Learning LMS", color: "bg-white/10" },
+        { icon: "file-text", title: "Pengajuan Surat", color: "bg-white/10" },
+        { icon: "certificate", title: "Legalisir Ijazah", color: "bg-white/10" },
+        { icon: "headset", title: "Helpdesk", color: "bg-white/10" },
+      ]; %>
+      <% layanans.forEach(function(l, i) { %>
+      <a href="#" class="reveal card-hover flex flex-col items-center gap-3 p-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/10 hover:border-white/30 text-center transition-all group" style="transition-delay: <%= i * 0.07 %>s">
+        <div class="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-primary-500/40 flex items-center justify-center transition-colors">
+          <i class="ph ph-<%= l.icon %> text-2xl text-white"></i>
+        </div>
+        <span class="text-white text-xs font-semibold leading-tight"><%= l.title %></span>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 8: PENDAFTARAN CTA
+     =================================================== -->
+<section id="pendaftaran" class="py-20 bg-white">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+    <div class="bg-gradient-to-br from-primary-600 to-islamic-dark rounded-3xl p-10 sm:p-14 shadow-2xl relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/5 -translate-y-1/2 translate-x-1/4"></div>
+      <div class="absolute bottom-0 left-0 w-48 h-48 rounded-full bg-black/10 translate-y-1/2 -translate-x-1/4"></div>
+      <div class="relative z-10">
+        <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mx-auto mb-6">
+          <i class="ph ph-pencil-simple-line text-3xl text-white"></i>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Siap Bergabung?</h2>
+        <p class="text-white/80 text-sm max-w-lg mx-auto mb-8 leading-relaxed">
+          Daftarkan dirimu sekarang dan mulai perjalanan akademik terbaik bersama Fakultas Tarbiyah dan Keguruan UIN Ar-Raniry Banda Aceh.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#" id="cta-daftar-now" class="px-8 py-3.5 bg-white text-primary-800 font-bold rounded-2xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-sm flex items-center gap-2 justify-center">
+            <i class="ph ph-pencil-simple-line"></i>
+            Daftar Sekarang
+          </a>
+          <a href="#" class="px-8 py-3.5 bg-white/10 border-2 border-white/30 text-white font-semibold rounded-2xl hover:bg-white/20 transition-all duration-300 text-sm flex items-center gap-2 justify-center">
+            <i class="ph ph-info"></i>
+            Info Pendaftaran
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     SECTION 9: KONTAK
+     =================================================== -->
+<section id="kontak" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-14 reveal">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-bold tracking-wider uppercase mb-4">Hubungi Kami</span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Ada Pertanyaan?</h2>
+      <p class="text-gray-500 text-sm max-w-md mx-auto">Kami siap membantu. Hubungi kami melalui saluran berikut atau kunjungi langsung kampus kami.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="card-hover reveal bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mx-auto mb-4">
+          <i class="ph ph-map-pin text-xl text-primary-700"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2 text-sm">Alamat</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">Jl. Syeikh Abdur Rauf, Kopelma Darussalam<br/>Banda Aceh, 23111 – Indonesia</p>
+      </div>
+      <div class="card-hover reveal reveal-delay-1 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mx-auto mb-4">
+          <i class="ph ph-envelope text-xl text-primary-700"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2 text-sm">Email & Telepon</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">
+          <a href="mailto:ftk@ar-raniry.ac.id" class="text-primary-700 hover:underline">ftk@ar-raniry.ac.id</a><br/>
+          <a href="tel:+62651778543" class="text-primary-700 hover:underline">(0651) 778543</a>
+        </p>
+      </div>
+      <div class="card-hover reveal reveal-delay-2 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center">
+        <div class="w-12 h-12 rounded-xl bg-primary-100 flex items-center justify-center mx-auto mb-4">
+          <i class="ph ph-clock text-xl text-primary-700"></i>
+        </div>
+        <h3 class="font-bold text-gray-900 mb-2 text-sm">Jam Layanan</h3>
+        <p class="text-gray-500 text-xs leading-relaxed">
+          Senin – Kamis: 08.00 – 16.00 WIB<br/>
+          Jumat: 08.00 – 11.30 WIB<br/>
+          Sabtu & Minggu: Tutup
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SLIDE DOTS SCRIPT ===== -->
+<script>
+  const slidesRef = document.querySelectorAll(' .hero-slide'); const dotsRef = document.querySelectorAll('.dot'); let
+    currentSlideRef = 0; function goToSlide(n) {
+      slidesRef[currentSlideRef].classList.remove('active');
+      dotsRef[currentSlideRef].classList.remove('bg-white/80');
+      dotsRef[currentSlideRef].classList.add('bg-white/30'); currentSlideRef = n;
+      slidesRef[currentSlideRef].classList.add('active');
+      dotsRef[currentSlideRef].classList.add('bg-white/80');
+      dotsRef[currentSlideRef].classList.remove('bg-white/30');
+    } // Auto - slide with dots sync
+  setInterval(() => {
+    const next = (currentSlideRef + 1) % slidesRef.length;
+    goToSlide(next);
+  }, 5000);
+</script>
